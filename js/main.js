@@ -71,4 +71,25 @@ $(function () {
     countingNumbers.forEach(countingNumber => {
         countingOnScroll.observe(countingNumber);
     });
+    
+    // Scroll animations
+    const transitions = document.querySelectorAll(".transition");
+    const transitionOptions = {
+        threshold: 0,
+        rootMargin: "0% 0% -10% 0%"
+    };
+    const transitionOnScroll = new IntersectionObserver(function (entries, transitionOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add("transition-active");
+                countingOnScroll.unobserve(entry.target);
+            };
+        });
+    }, transitionOptions);
+
+    transitions.forEach(transition => {
+        transitionOnScroll.observe(transition);
+    });
 });
