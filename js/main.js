@@ -23,7 +23,7 @@ $(function () {
         loop: true,
         items: 1,
         margin: 40,
-        nav: true,
+        nav: false,
         center: true,
     });
 
