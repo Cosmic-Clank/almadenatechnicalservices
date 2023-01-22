@@ -92,4 +92,11 @@ $(function () {
     transitions.forEach(transition => {
         transitionOnScroll.observe(transition);
     });
+
+    // Services hover effect
+    $("#services .card").hover(function () {
+        $(this).find("p").toggleClass("visible");
+        $(this).find("h3").toggleClass("hidden");
+        $(this).find(".service-overlay").toggleClass("darker");
+    });
 });
