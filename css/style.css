@@ -396,6 +396,17 @@ header .hamburger {
 #hero h1 {
 	font-size: var(--fs-900);
 }
+@media screen and (max-width: 768px) {
+	#hero h1 {
+		font-size: var(--fs-800);
+	}
+}
+
+#hero p {
+	font-size: var(--fs-300);
+	line-height: 20px;
+	letter-spacing: 1px;
+}
 
 #hero .socials-icons {
 	justify-content: flex-start;
@@ -411,6 +422,9 @@ header .hamburger {
 	width: auto;
 	height: auto;
 	aspect-ratio: 1/1;
+	padding: 0.4rem 0.8rem;
+	border-radius: 25px;
+	background-color: var(--clr-accent-400);
 }
 
 /* Quote section */
@@ -438,6 +452,7 @@ header .hamburger {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 3rem 6rem 6rem 5rem;
 }
 
 #about .content {
@@ -507,7 +522,7 @@ header .hamburger {
 
 /* Clients section */
 #clients .container {
-	padding: 5rem 10rem 10rem 10rem;
+	padding: 4rem 10rem 8rem 10rem;
 }
 
 #clients .logos-slider .owl-stage {
@@ -547,6 +562,10 @@ header .hamburger {
 	padding: 0 0;
 	/*0 5%; */
 	gap: 10px;
+}
+
+#services .container {
+	padding: 2rem 10rem 8rem 10rem;
 }
 
 #services .service-cards .card {
