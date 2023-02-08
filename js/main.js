@@ -81,9 +81,10 @@ $(function () {
         $(this).find("p").toggleClass("visible");
         $(this).find("h3").toggleClass("hidden");
         $(this).find(".service-overlay").toggleClass("darker");
+        $(this).find("img").toggleClass("hovered");
     });
 
-    // Portfolio isotop filter
+    // Portfolio isotope filter
     var $container = $('#gallery .images');
     $container.isotope({
         filter: '.1',
