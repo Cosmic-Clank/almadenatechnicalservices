@@ -317,6 +317,7 @@ header .hamburger {
 	header {
 		padding: 1rem 2rem;
 	}
+
 	header .nav-list {
 		position: absolute;
 		flex-direction: column;
@@ -344,7 +345,7 @@ header .hamburger {
 #hero {
 	animation: slideBg 20s linear infinite 0s;
 	animation-timing-function: ease-in-out;
-	background-image: url(../img/hero-bg.jpg);
+	background-image: url(../img/hero-bg/1.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -396,16 +397,17 @@ header .hamburger {
 	line-height: 5rem;
 	width: clamp(400px, 50%, 1000px);
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
+	bottom: 20%;
+	left: 0;
+	/* transform: translate(-50%, -50%); */
+	text-align: left;
 }
 
 #hero .socials-icons {
 	padding: 0;
 	position: absolute;
-	left: 50%;
+	right: -5%;
+	bottom: 10%;
 	transform: translate(-50%, 50%);
 
 }
@@ -431,32 +433,27 @@ header .hamburger {
 	}
 }
 
-
-
-#hero .socials-icons {
-	justify-content: flex-start;
-	padding-left: 2rem;
-}
-
 #hero .learn-more {
 	position: absolute;
-	bottom: 5%;
-	right: 5%;
-	font-size: 1.5rem;
+	bottom: -30%;
+	font-size: 1.2rem;
 	color: var(--clr-neutral-100);
 	cursor: pointer;
-	width: auto;
-	height: auto;
-	aspect-ratio: 1/1;
-	padding: 0.4rem 0.8rem;
+	padding: 1rem 1rem;
 	border-radius: 25px;
+	line-height: 2px;
 	background-color: var(--clr-accent-400);
 }
 
+#hero .learn-more:is(:hover, :focus) {
+	color: hsl(189, 100%, 15%);
+}
+
+
 @media screen and (max-width: 768px) {
 	#hero .learn-more {
-	font-size: 1.6rem;
-		
+		font-size: 1.6rem;
+
 	}
 }
 
@@ -681,7 +678,7 @@ header .hamburger {
 }
 
 #services .service-cards .card {
-	background-color: var(--clr-neutral-100);
+	/* background-color: var(--clr-accent-400); */
 
 	width: 22.5rem;
 	height: 20rem;
@@ -709,21 +706,25 @@ header .hamburger {
 }
 
 #services .service-cards .card img {
-	width: 100%;
+	height: 50%;
+	object-position: center;
 	object-fit: cover;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: -1;
-	transition: transform 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-#services .service-cards .card img.hovered {
-	transform: scale(1.3);
+
+#services .service-cards .card img.hidden {
+	opacity: 0;
 }
+
 
 #services .service-cards .card h3 {
 	color: var(--clr-neutral-100);
-	padding: 0.5rem 0;
+	padding: 0.1rem 0;
 	font-size: var(--fs-500);
 	margin: 0 2rem 1rem 2rem;
 	opacity: 1;
@@ -744,9 +745,7 @@ header .hamburger {
 	transform: translateY(10%);
 }
 
-#services .service-cards .card h3.hidden {
-	opacity: 0;
-}
+
 
 /* Projects section */
 #gallery {
@@ -774,14 +773,19 @@ header .hamburger {
 	align-items: center;
 	gap: 1rem;
 	margin-bottom: 2rem;
+
+
 }
 
 #gallery .categories a {
 	color: #000;
 	background-color: #cfcfcf;
-	padding: 0.2rem 0.5rem;
-	border-radius: 0.5rem;
-	border: 1px solid #acacac;
+	padding: 0.2rem 0.7rem;
+
+	border-radius: 11px;
+background: linear-gradient(145deg, #e6e6e6, #ffffff);
+box-shadow:  5px 5px 0px #c2c2c2,
+             -5px -5px 0px #ffffff;
 }
 
 #gallery .categories a:is(:hover, :focus) {
@@ -800,7 +804,30 @@ header .hamburger {
 	overflow: hidden;
 	width: 33.3%;
 	height: 24rem;
+	position: relative;
 }
+
+#gallery .images .item .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 95%;
+	height: 95%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 5rem;
+	color: #00000000;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#gallery .images .item .overlay.hovered {
+	background-color: hsla(0, 0%, 0%, 0.377);
+	color: #fff;
+
+}
+
 
 @media screen and (max-width: 768px) {
 	#gallery .images .item {
@@ -943,7 +970,7 @@ footer .container {
 }
 
 footer img {
-	width: 10rem;
+	width: 20rem;
 	margin-bottom: 4rem;
 }
 

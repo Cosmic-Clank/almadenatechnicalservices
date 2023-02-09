@@ -79,11 +79,17 @@ $(function () {
     // Services hover effect
     $("#services .card").hover(function () {
         $(this).find("p").toggleClass("visible");
-        $(this).find("h3").toggleClass("hidden");
         $(this).find(".service-overlay").toggleClass("darker");
-        $(this).find("img").toggleClass("hovered");
+        $(this).find("img").toggleClass("hidden");
     });
-
+    
+    // Portfolio hover effect
+    $("#gallery .images .item .overlay").hover(function () {
+        $(this).toggleClass("hovered")
+        // $(this).find("p").toggleClass("visible");
+        // $(this).find(".service-overlay").toggleClass("darker");
+        // $(this).find("img").toggleClass("hidden");
+    });
     // Portfolio isotope filter
     var $container = $('#gallery .images');
     $container.isotope({
@@ -110,10 +116,10 @@ $(function () {
     });
 
     // Nivo Lightbox 
-    // $('#gallery .item a').nivoLightbox({
-    //     effect: 'slideDown',
-    //     keyboardNav: true,
-    // });
+    $('#gallery .item a').nivoLightbox({
+        effect: 'slideDown',
+        keyboardNav: true,
+    });
 
 
     // Slick slider

@@ -7,11 +7,6 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
  
- .nivo-lightbox-theme-default * {
-    -webkit-box-sizing: initial !important;
-    -moz-box-sizing: initial !important;
-    box-sizing: initial !important;
- }
 .nivo-lightbox-theme-default.nivo-lightbox-overlay { 
 	background: #666;
 	background: rgba(0,0,0,0.6); 
@@ -29,7 +24,7 @@
 }
 .nivo-lightbox-theme-default .nivo-lightbox-nav:hover { 
 	opacity: 1; 
-	background-color: transparent;
+	background-color: rgba(0,0,0,0.5);
 }
 .nivo-lightbox-theme-default .nivo-lightbox-prev { 
 	background-image: url(prev.png); 
