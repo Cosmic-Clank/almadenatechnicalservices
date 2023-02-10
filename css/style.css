@@ -321,6 +321,7 @@ header .hamburger {
 	header .nav-list {
 		position: absolute;
 		flex-direction: column;
+		justify-content: space-evenly;
 		background-color: var(--clr-navbar-400);
 		top: 0;
 		right: 0;
@@ -397,8 +398,8 @@ header .hamburger {
 	line-height: 5rem;
 	width: clamp(400px, 50%, 1000px);
 	position: absolute;
-	bottom: 20%;
-	left: 0;
+	bottom: 16%;
+	left: 4rem;
 	/* transform: translate(-50%, -50%); */
 	text-align: left;
 }
@@ -423,19 +424,29 @@ header .hamburger {
 	letter-spacing: 1px;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 780px) {
 	/* #hero h1 {
 		font-size: var(--fs-800);
 	} */
 
 	#hero p {
-		font-size: 1.75rem;
+		font-size: 1.2rem;
+	}
+
+	#hero .content {
+		left: 1rem;
+		bottom: 14rem;
+	}
+
+	#hero .socials-icons {
+		bottom: 4rem;
+		left: 12rem;
 	}
 }
 
 #hero .learn-more {
 	position: absolute;
-	bottom: -30%;
+	bottom: -25%;
 	font-size: 1.2rem;
 	color: var(--clr-neutral-100);
 	cursor: pointer;
@@ -478,6 +489,8 @@ header .hamburger {
 	padding: 3rem;
 }
 
+
+
 #avail a {
 	color: black;
 }
@@ -496,6 +509,12 @@ header .hamburger {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+	#avail .cards {
+	flex-direction: column;
+	}
 }
 
 #avail .cards>* {
@@ -544,7 +563,7 @@ header .hamburger {
 	padding: 0 0 3rem 0;
 	border-radius: 3rem;
 	text-align: center;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 
 	width: clamp(400px, 50%, 800px);
 }
@@ -602,12 +621,30 @@ header .hamburger {
 	#about .numbers .number {
 		width: 100%;
 	}
+
+	#about .section-title p {
+		font-size: 1rem;
+	}
 }
 
 
 /* Clients section */
 #clients .container {
-	padding: 0rem 4% 4rem 4%;
+	padding: 0rem 2.5rem 4rem 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+	#clients .container {
+		padding: 0rem 2.5rem 0rem 2.5rem;
+	}
+
+	#clients .section-title h2 {
+		font-size: 5rem;
+	}
+
+	#clients .section-title p {
+		font-size: 0.8rem;
+	}
 }
 
 #clients .logo {
@@ -675,13 +712,20 @@ header .hamburger {
 	#services .container {
 		padding: 2rem 3rem 8rem 3rem;
 	}
+
+	#services .section-title h2 {
+		font-size: 4rem;
+	}
+	#services .section-title p {
+		font-size: 1rem;
+	}
 }
 
 #services .service-cards .card {
 	/* background-color: var(--clr-accent-400); */
 
-	width: 22.5rem;
-	height: 20rem;
+	width: 22rem;
+	height: 18rem;
 	position: relative;
 	overflow: hidden;
 }
@@ -689,10 +733,7 @@ header .hamburger {
 #services .service-cards .card .service-overlay {
 	width: 100%;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: flex-start;
+
 	transition: background-color 0.3s ease-in-out;
 	background-color: hsla(0, 0%, 0%, 0.194);
 }
@@ -706,7 +747,7 @@ header .hamburger {
 }
 
 #services .service-cards .card img {
-	height: 50%;
+	height: 40%;
 	object-position: center;
 	object-fit: cover;
 	position: absolute;
@@ -723,17 +764,19 @@ header .hamburger {
 
 
 #services .service-cards .card h3 {
+	position: absolute;
+	bottom: 0;
 	color: var(--clr-neutral-100);
 	padding: 0.1rem 0;
 	font-size: var(--fs-500);
-	margin: 0 2rem 1rem 2rem;
+	margin: 0 1rem 1rem 1rem;
 	opacity: 1;
 }
 
 #services .service-cards .card p {
 	color: var(--clr-neutral-100);
 	font-size: var(--fs-300);
-	margin: 0 2rem 1rem 2rem;
+	margin: 0 1rem 1rem 1rem;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -783,9 +826,9 @@ header .hamburger {
 	padding: 0.2rem 0.7rem;
 
 	border-radius: 11px;
-background: linear-gradient(145deg, #e6e6e6, #ffffff);
-box-shadow:  5px 5px 0px #c2c2c2,
-             -5px -5px 0px #ffffff;
+	background: linear-gradient(145deg, #e6e6e6, #ffffff);
+	box-shadow: 5px 5px 0px #c2c2c2,
+		-5px -5px 0px #ffffff;
 }
 
 #gallery .categories a:is(:hover, :focus) {
@@ -825,14 +868,16 @@ box-shadow:  5px 5px 0px #c2c2c2,
 #gallery .images .item .overlay.hovered {
 	background-color: hsla(0, 0%, 0%, 0.377);
 	color: #fff;
-
 }
-
 
 @media screen and (max-width: 768px) {
 	#gallery .images .item {
 		width: 50%;
 		height: 18rem;
+	}
+
+	#gallery .section-title h2 {
+		font-size: 5rem;
 	}
 }
 
@@ -848,19 +893,27 @@ box-shadow:  5px 5px 0px #c2c2c2,
 	overflow: hidden;
 }
 
+#testimonials .section-title {
+	padding: 2rem 0;
+	text-align: center;
+}
+
 #testimonials .section-title h2 {
 	font-size: 7rem;
 }
 
 @media screen and (max-width: 768px) {
 	#testimonials .section-title h2 {
-		font-size: 4rem;
+		font-size: 3rem;
 	}
+	#testimonials .section-title p {
+		font-size: 1.2rem;
+	}
+	
 }
 
 #testimonials .container {
 	padding-bottom: 3rem;
-	padding-top: 3rem;
 }
 
 #testimonials .testimonials-carousel p {
@@ -883,6 +936,13 @@ box-shadow:  5px 5px 0px #c2c2c2,
 	flex-wrap: wrap;
 	padding-top: 8rem;
 
+}
+
+@media screen and (max-width: 768px) {
+	#contact iframe {
+		width: 350px;
+		height: 250px;
+	}
 }
 
 #contact .container>* {

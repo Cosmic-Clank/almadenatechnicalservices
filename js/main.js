@@ -82,7 +82,7 @@ $(function () {
         $(this).find(".service-overlay").toggleClass("darker");
         $(this).find("img").toggleClass("hidden");
     });
-    
+
     // Portfolio hover effect
     $("#gallery .images .item .overlay").hover(function () {
         $(this).toggleClass("hovered")
@@ -150,7 +150,9 @@ $(function () {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    dots: false
+
                 }
             }
         ]
