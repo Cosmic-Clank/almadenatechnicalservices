@@ -90,9 +90,10 @@ $(function () {
         // $(this).find(".service-overlay").toggleClass("darker");
         // $(this).find("img").toggleClass("hidden");
     });
-    // Portfolio isotope filter
-    var $container = $('#gallery .images');
-    $container.isotope({
+
+    // Exterior isotope filter
+    var $exterior_container = $('#gallery .sections .exterior .images');
+    $exterior_container.isotope({
         filter: '.1',
         animationOptions: {
             duration: 750,
@@ -100,11 +101,61 @@ $(function () {
             queue: false
         }
     });
-    $('#gallery .categories a').click(function () {
-        $('.categories .active').removeClass('active');
+    $('#gallery .sections .exterior .categories a').click(function () {
+        $('#gallery .sections .exterior .categories .active').removeClass('active');
         $(this).addClass('active');
         var selector = $(this).attr('data-filter');
-        $container.isotope({
+        $exterior_container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        return false;
+    });
+    
+    // Interior isotope filter
+    var $interior_container = $('#gallery .sections .interior .images');
+    $interior_container.isotope({
+        filter: '.1',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+    $('#gallery .sections .interior .categories a').click(function () {
+        $('#gallery .sections .interior .categories .active').removeClass('active');
+        $(this).addClass('active');
+        var selector = $(this).attr('data-filter');
+        $interior_container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        return false;
+    });
+
+    // General section isotope filter
+    var $section_container = $('#gallery .sections');
+    $section_container.isotope({
+        filter: '.exterior',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+    $('#gallery .main-categories a').click(function () {
+        $('#gallery .main-categories .active').removeClass('active');
+        $(this).addClass('active');
+        var selector = $(this).attr('data-filter');
+        $section_container.isotope({
             filter: selector,
             animationOptions: {
                 duration: 750,
