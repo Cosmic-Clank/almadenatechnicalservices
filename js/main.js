@@ -91,31 +91,6 @@ $(function () {
         // $(this).find("img").toggleClass("hidden");
     });
 
-    // Exterior isotope filter
-    var $exterior_container = $('#gallery .sections .exterior .images');
-    $exterior_container.isotope({
-        filter: '.1',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
-    $('#gallery .sections .exterior .categories a').click(function () {
-        $('#gallery .sections .exterior .categories .active').removeClass('active');
-        $(this).addClass('active');
-        var selector = $(this).attr('data-filter');
-        $exterior_container.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-        });
-        return false;
-    });
-    
     // Interior isotope filter
     var $interior_container = $('#gallery .sections .interior .images');
     $interior_container.isotope({
@@ -141,6 +116,31 @@ $(function () {
         return false;
     });
 
+    // Exterior isotope filter
+    var $exterior_container = $('#gallery .sections .exterior .images');
+    $exterior_container.isotope({
+        filter: '.1',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+    $('#gallery .sections .exterior .categories a').click(function () {
+        $('#gallery .sections .exterior .categories .active').removeClass('active');
+        $(this).addClass('active');
+        var selector = $(this).attr('data-filter');
+        $exterior_container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        return false;
+    });
+    
     // General section isotope filter
     var $section_container = $('#gallery .sections');
     $section_container.isotope({
