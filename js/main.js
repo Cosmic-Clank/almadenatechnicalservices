@@ -86,9 +86,9 @@ $(function () {
     // Portfolio hover effect
     $("#gallery .images .item .overlay").hover(function () {
         $(this).toggleClass("hovered")
-        // $(this).find("p").toggleClass("visible");
-        // $(this).find(".service-overlay").toggleClass("darker");
-        // $(this).find("img").toggleClass("hidden");
+    });
+    $("#gallery .before-after .item .overlay").hover(function () {
+        $(this).toggleClass("hovered")
     });
 
     // Interior isotope filter
