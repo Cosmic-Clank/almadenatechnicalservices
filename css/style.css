@@ -344,7 +344,7 @@ header .hamburger {
 
 /* Hero Section */
 #hero {
-	animation: slideBg 20s linear infinite 0s;
+	animation: slideBg 30s linear infinite 0s;
 	animation-timing-function: ease-in-out;
 	background-image: url(../img/hero-bg/1.jpg);
 	background-repeat: no-repeat;
@@ -359,20 +359,28 @@ header .hamburger {
 		background-image: url(../img/hero-bg/1.jpg);
 	}
 
-	25% {
+	16.5% {
 		background-image: url(../img/hero-bg/2.jpg);
 	}
 
-	50% {
+	33% {
 		background-image: url(../img/hero-bg/3.jpg);
 	}
 
-	75% {
+	49.5% {
 		background-image: url(../img/hero-bg/4.jpg);
 	}
 
-	100% {
+	65.5% {
 		background-image: url(../img/hero-bg/5.jpg);
+	}
+
+	82% {
+		background-image: url(../img/hero-bg/6.jpg);
+	}
+
+	100% {
+		background-image: url(../img/hero-bg/7.jpg);
 	}
 }
 
@@ -461,7 +469,7 @@ header .hamburger {
 	font-size: 1rem;
 	color: var(--clr-neutral-100);
 	cursor: pointer;
-	padding: 0.5rem 0.5rem;
+	padding: 1rem 1rem;
 	border-radius: 25px;
 	line-height: 2px;
 	background-color: var(--clr-accent-400);
@@ -779,12 +787,18 @@ header .hamburger {
 
 #services .service-cards .card p {
 	color: var(--clr-neutral-100);
-	font-size: var(--fs-300);
+	font-size: 0.8rem;
 	margin: 0 1rem 1rem 1rem;
 	position: absolute;
 	top: 0;
 	left: 0;
 	opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+	#services .service-cards .card p {
+		font-size: 0.7rem;
+	}
 }
 
 #services .service-cards .card p.visible {
@@ -804,6 +818,11 @@ header .hamburger {
 	padding: 2rem 0;
 }
 
+@media screen and (max-width: 768px) {
+	#gallery.height-fixed {
+		height: 250vh;
+	}
+}
 #gallery .section-title h2 {
 	font-size: 6rem;
 	color: var(--clr-neutral-150);
@@ -835,6 +854,10 @@ header .hamburger {
 }
 
 #gallery .main-categories a:is(:hover, :focus) {
+	color: hsl(189, 100%, 15%);
+}
+
+#gallery .main-categories a.active {
 	color: hsl(189, 100%, 15%);
 }
 
@@ -872,8 +895,10 @@ header .hamburger {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-size: 5rem;
+	text-align: center;
+	font-size: 1.2rem;
 	color: #00000000;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;	
 }
 
 #gallery .sections .before-after .item a .overlay.hovered {
@@ -968,7 +993,8 @@ header .hamburger {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-size: 5rem;
+	font-size: 1.2rem;
+	text-align: center;
 	color: #00000000;
 	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -1043,7 +1069,7 @@ header .hamburger {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	gap: 2rem;
 	flex-wrap: wrap;
 	padding-top: 8rem;
@@ -1071,6 +1097,10 @@ header .hamburger {
 	margin-bottom: 3rem;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+}
+
+#contact .info .item a {
+	font-size: 0.8rem;
 }
 
 #contact .contact-form {
@@ -1176,3 +1206,4 @@ footer .info .item {
 footer .socials-icons {
 	padding: 0;
 }
+
