@@ -1,7 +1,4 @@
 $(function () {
-
-
-
     $("#testimonials .owl-carousel").owlCarousel({
         loop: true,
         items: 1,
@@ -154,7 +151,12 @@ $(function () {
     $('#gallery .main-categories a').click(function () {
         $('#gallery .main-categories .active').removeClass('active');
         $(this).addClass('active');
-        // $('#gallery').addClass("height-fixed")
+        if (this.getAttribute("data-filter") == ".interior"){
+            $('#gallery').addClass("height-fixed")
+        } else {
+            $('#gallery').removeClass("height-fixed")
+        }
+            
         var selector = $(this).attr('data-filter');
         $section_container.isotope({
             filter: selector,

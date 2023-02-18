@@ -820,7 +820,7 @@ header .hamburger {
 
 @media screen and (max-width: 768px) {
 	#gallery.height-fixed {
-		height: 250vh;
+		height: 230vh;
 	}
 }
 #gallery .section-title h2 {
